@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<div class="index-container container-fluid">
+	<div class="slider-container">		
+		<article class="slogan">"Lorem ipsum dolor sit amet, consectetur adipiscing elit."</article>
+		<img src="../../dist/images/yazi_line4.png" class="img-slogan" />		
+	</div>
+	<img src="../../dist/images/circles.png" class="circle-line" />
+	<div class="content-container">
+		<div class="general-title">{{ yazi.baslik }}</div>
+		<div class="text-single-container">
+			{{ yazi.icerik }}
+		</div>
+	</div>
+</div>
+{% endblock %}
