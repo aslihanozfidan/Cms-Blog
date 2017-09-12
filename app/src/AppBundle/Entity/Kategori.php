@@ -12,8 +12,8 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Kategori
 {
-
-     /**
+    // ...
+    /**
      * Many Kategori have Many Yazilar.
      * @ORM\ManyToMany(targetEntity="Yazilar", mappedBy="kategoriler")
      */
@@ -50,7 +50,6 @@ class Kategori
 
     /**
      * Get id
-     *
      * @return int
      */
     public function getId()
@@ -105,6 +104,7 @@ class Kategori
     {
         return $this->aciklama;
     }
+
 
     /**
      * Add yazilar

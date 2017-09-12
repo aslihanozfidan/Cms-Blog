@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
     <title>{% block title %}Welcome!{% endblock %}</title>
@@ -13,12 +12,11 @@
 
     <!-- Bootstrap core CSS -->
     <link href="../../dist/css/bootstrap.min.css" rel="stylesheet"> 
-{#     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> #}
     {% block stylesheets %}{% endblock %}
       <link href="../../dist/css/animate.css" rel="stylesheet">
     <!-- Custom styles for this template -->
-    <link href="../../dist/css/style.css" rel="stylesheet">    
-
+    <link href="../../dist/css/style.css" rel="stylesheet">
+    <script type="text/javascript" src="../../dist/js/jquery-3.2.1.min.js"></script>
   </head>
 
   <body> 
@@ -32,14 +30,14 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>                        
           </button>
-          <a class="navbar-brand" href="/">Bizzat-i Kendisi</a>
+          <a class="navbar-brand" href="{{ path('homepage') }}">Bizzat-i Kendisi</a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="/">ANA SAYFA</a></li>
-            <li><a href="/bizzatikendisi/hakkimda">HAKKIMDA</a></li>
-            <li><a href="/bizzatikendisi/yazilarim">YAZILARIM</a></li>
-            <li><a href="/bizzatikendisi/iletisim">İLETİŞİM</a></li>
+            <li class="active"><a href="{{ path('homepage') }}">ANA SAYFA</a></li>
+            <li><a href="{{ path('bizzatikendisi_hakkimda') }}">HAKKIMDA</a></li>
+            <li><a href="{{ path('bizzatikendisi_yazilarim') }}">YAZILARIM</a></li>
+            <li><a href="{{ path('bizzatikendisi_iletisim') }}">İLETİŞİM</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#"><img src="../../dist/images/facebook.png" /></a></li>
@@ -53,14 +51,14 @@
         <div class="container container-app">
             {% block body %}{% endblock %}
         </div>
+
+      <script type="text/javascript" src="../../dist/js/bootstrap.min.js"></script>
+      <script type="text/javascript" src="../../dist/js/script.js"></script>
+      <script type="text/javascript" src="../../dist/js/jquery.scrollless.js"></script>
     </div>
   </div><!-- /.container -->
-
-
     {% block javascripts %}{% endblock %}
-    <script type="text/javascript" src="../../dist/js/jquery-3.2.1.min.js"/>
-    <script type="text/javascript" src="../../dist/js/bootstrap.min.js"/>
-    <script type="text/javascript" src="../../dist/js/script.js"/>
+
   </body>
 </html>
 

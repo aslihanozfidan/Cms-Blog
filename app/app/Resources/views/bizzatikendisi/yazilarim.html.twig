@@ -24,18 +24,18 @@
 			<article class="text-article">
 				<div class="text-title">{{ yazi.baslik }}</div>
 				{{ yazi.icerik }}
-				<a href="/bizzatikendisi/yazilarim/{{ yazi.id }}" class="continue">Daha fazlasını okuyun...</a>
+				<a href="/yazilarim/{{ yazi.id }}" class="continue">Daha fazlasını okuyun...</a>
 			</article>
 		</div>
 		{% endfor %}
 	</div>
 </div>
 
-<script type="text/javascript">
+<script>
     var list;
     do{
-        list  = document.getElementsByClassName("content-container").getElementsByClassName("text-container");
-	}while(list==(document.getElementsByClassName("content-container").getElementsByClassName("text-container")).length);
+        list  = document.getElementsByClassName("text-container");
+	}while(0 < (document.getElementsByClassName("text-container")).length);
 
 
     for(var i=0;i<list - 1;i++){

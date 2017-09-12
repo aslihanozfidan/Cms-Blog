@@ -12,8 +12,8 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Kategori
 {
-
-     /**
+    // ...
+    /**
      * Many Kategori have Many Yazilar.
      * @ORM\ManyToMany(targetEntity="Yazilar", mappedBy="kategoriler")
      */
@@ -50,7 +50,6 @@ class Kategori
 
     /**
      * Get id
-     *
      * @return int
      */
     public function getId()
@@ -106,37 +105,4 @@ class Kategori
         return $this->aciklama;
     }
 
-    /**
-     * Add yazilar
-     *
-     * @param \AppBundle\Entity\Yazilar $yazilar
-     *
-     * @return Kategori
-     */
-    public function addYazilar(\AppBundle\Entity\Yazilar $yazilar)
-    {
-        $this->yazilar[] = $yazilar;
-
-        return $this;
-    }
-
-    /**
-     * Remove yazilar
-     *
-     * @param \AppBundle\Entity\Yazilar $yazilar
-     */
-    public function removeYazilar(\AppBundle\Entity\Yazilar $yazilar)
-    {
-        $this->yazilar->removeElement($yazilar);
-    }
-
-    /**
-     * Get yazilar
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getYazilar()
-    {
-        return $this->yazilar;
-    }
 }

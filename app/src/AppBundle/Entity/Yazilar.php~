@@ -12,18 +12,18 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Yazilar
 {
-
-
     /**
      * Many Yazilar have Many Kategori.
-     * @ORM\ManyToMany(targetEntity="Kategori", inversedBy="Yazilar")
-     * @ORM\JoinTable(name="KategoriYazi")
+     * @ORM\ManyToMany(targetEntity="Kategori", inversedBy="yazilar")
+     * @ORM\JoinTable(name="yazi_kategori")
      */
     private $kategoriler;
 
     public function __construct() {
         $this->kategoriler = new \Doctrine\Common\Collections\ArrayCollection();
     }
+
+
     /**
      * @var int
      *
@@ -168,37 +168,4 @@ class Yazilar
         return $this->anaResim;
     }
 
-    /**
-     * Add kategoriler
-     *
-     * @param \AppBundle\Entity\Kategori $kategoriler
-     *
-     * @return Yazilar
-     */
-    public function addKategoriler(\AppBundle\Entity\Kategori $kategoriler)
-    {
-        $this->kategoriler[] = $kategoriler;
-
-        return $this;
-    }
-
-    /**
-     * Remove kategoriler
-     *
-     * @param \AppBundle\Entity\Kategori $kategoriler
-     */
-    public function removeKategoriler(\AppBundle\Entity\Kategori $kategoriler)
-    {
-        $this->kategoriler->removeElement($kategoriler);
-    }
-
-    /**
-     * Get kategoriler
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getKategoriler()
-    {
-        return $this->kategoriler;
-    }
 }
